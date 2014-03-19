@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ES6</title>
+		<script src="traceur.js"></script>
+		<script src="es6-module-loader.js"></script>
+	</head>
+	<body>
+		<script type="module">
+			module accounts from 'modules-accounts';
+
+			console.log(accounts);
+
+			var service = new accounts.AccountsService(),
+				controller = new accounts.OverviewController(service);
+		</script>
+
+		<script type="module">
+			import { AccountsService, OverviewController } from 'modules-accounts';
+
+			var service = new AccountsService(),
+				controller = new OverviewController(service);
+		</script>
+	</body>
+</html>
